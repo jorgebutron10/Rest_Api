@@ -14,7 +14,6 @@ app.use(express.json());
 // setup morgan which gives us http request logging
 app.use(morgan('dev'));
 
-// TODO setup your api routes here
 
 // setup a friendly greeting for the root route
 app.get('/', (req, res) => {
@@ -28,6 +27,8 @@ app.use("/api/users", require("./routes/users"));
 app.use("/api/courses", require("./routes/courses"));
 app.use("/api/authentication",require("./routes/authentication"));
 
+// DB connection testing
+const sequelize = require('./models').sequelize;
 
 
 // 404
